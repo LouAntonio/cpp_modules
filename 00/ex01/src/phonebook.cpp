@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:49:52 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/20 13:10:01 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:38:26 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ void PhoneBook::searchContact(void)
 			std::cout << "First Name: " 	<< contacts[i - 1].firstName << std::endl;
 			std::cout << "Last Name: " 		<< contacts[i - 1].lastName << std::endl;
 			std::cout << "Nickname: " 		<< contacts[i - 1].nickName << std::endl;
-			std::cout << "Phone Number: " 	<< contacts[i - 1].phoneNumber << std::endl;
 		}
 		else
 			std::cout << "Invalid index!" << std::endl;
