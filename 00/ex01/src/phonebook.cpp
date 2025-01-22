@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:49:52 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/21 14:38:26 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:22:22 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 PhoneBook::PhoneBook() {
 	qtdContacts = 0;
 }
+
+Contact::Contact() {}
+
+Contact::~Contact() {}
 
 int	validatePhoneNumber(std::string phoneNum)
 {
@@ -39,6 +43,56 @@ void	PhoneBook::printMenu(void)
 	std::cout << "EXIT - Leave the app" << std::endl;
 }
 
+void Contact::setFirstName(std::string firstName)
+{
+	this->firstName = firstName;
+}
+
+void Contact::setLastName(std::string lastName)
+{
+	this->lastName = lastName;
+}
+
+void Contact::setNickName(std::string nickName)
+{
+	this->nickName = nickName;
+}
+
+void Contact::setPhoneNumber(std::string phoneNumber)
+{
+	this->phoneNumber = phoneNumber;
+}
+
+void Contact::setDarkestSecret(std::string darkestSecret)
+{
+	this->darkestSecret = darkestSecret;
+}
+
+std::string Contact::getFirstName()
+{
+	return (this->firstName);
+}
+
+std::string Contact::getLastName()
+{
+	return (this->lastName);
+}
+
+std::string Contact::getNickName()
+{
+	return (this->nickName);
+}
+
+std::string Contact::getPhoneNumber()
+{
+	return (this->phoneNumber);
+}
+
+std::string Contact::getDarkestSecret()
+{
+	return (this->darkestSecret);
+}
+
 void    PhoneBook::addContact(void)
 {
 	if (qtdContacts == maxContacts)
@@ -50,40 +104,50 @@ void    PhoneBook::addContact(void)
 	}
 	Contact newContact;
 	
+	std::string firstName;
 	do {
 		std::cout << "Enter first name: ";
-		std::getline(std::cin, newContact.firstName);
+		std::getline(std::cin, firstName);
 		if (std::cin.eof())
 			exit(1);
-	} while (newContact.firstName.empty());
+		newContact.setFirstName(firstName);
+	} while (firstName.empty());
 
+	std::string lastName;
 	do {
 		std::cout << "Enter last name: ";
-		std::getline(std::cin, newContact.lastName);
+		std::getline(std::cin, lastName);
 		if (std::cin.eof())
 			exit(1);
-	} while (newContact.lastName.empty());
+		newContact.setLastName(lastName);
+	} while (lastName.empty());
 
+	std::string nickName;
 	do {
 		std::cout << "Enter nickname: ";
-		std::getline(std::cin, newContact.nickName);
+		std::getline(std::cin, nickName);
 		if (std::cin.eof())
 			exit(1);
-	} while (newContact.nickName.empty());
+		newContact.setNickName(nickName);
+	} while (nickName.empty());
 
+	std::string phoneNumber;
 	do {
 		std::cout << "Enter phone number: ";
-		std::getline(std::cin, newContact.phoneNumber);
+		std::getline(std::cin, phoneNumber);
 		if (std::cin.eof())
 			exit(1);
-	} while (newContact.phoneNumber.empty() || !validatePhoneNumber(newContact.phoneNumber));
-	
+		newContact.setPhoneNumber(phoneNumber);
+	} while (phoneNumber.empty() || !validatePhoneNumber(phoneNumber));
+
+	std::string darkestSecret;
 	do {
 		std::cout << "Enter darkest secret: ";
-		std::getline(std::cin, newContact.darkestSecret);
+		std::getline(std::cin, darkestSecret);
 		if (std::cin.eof())
 			exit(1);
-	} while (newContact.darkestSecret.empty());
+		newContact.setDarkestSecret(darkestSecret);
+	} while (darkestSecret.empty());
 		
 	contacts[qtdContacts++] = newContact;
 	std::cout << "Contact added!" << std::endl;
@@ -115,9 +179,9 @@ void PhoneBook::searchContact(void)
     for (int i = 0; i < qtdContacts; i++)
     {
         std::cout << std::setw(10) << (i + 1) << " | "
-			<< std::setw(10) << truncateString(contacts[i].firstName) << " | "
-			<< std::setw(10) << truncateString(contacts[i].lastName) << " | "
-			<< std::setw(10) << truncateString(contacts[i].nickName) << std::endl;
+			<< std::setw(10) << truncateString(contacts[i].getFirstName()) << " | "
+			<< std::setw(10) << truncateString(contacts[i].getLastName()) << " | "
+			<< std::setw(10) << truncateString(contacts[i].getNickName()) << std::endl;
     }
 
 	int i;
@@ -134,12 +198,12 @@ void PhoneBook::searchContact(void)
 			std::cin.ignore(INT_MAX, '\n');
 			break;
 		}
-		else if (!contacts[i - 1].firstName.empty())
+		else if (!contacts[i - 1].getFirstName().empty())
 		{
 			std::cout << "Index: " 			<< i << std::endl;
-			std::cout << "First Name: " 	<< contacts[i - 1].firstName << std::endl;
-			std::cout << "Last Name: " 		<< contacts[i - 1].lastName << std::endl;
-			std::cout << "Nickname: " 		<< contacts[i - 1].nickName << std::endl;
+			std::cout << "First Name: " 	<< contacts[i - 1].getFirstName() << std::endl;
+			std::cout << "Last Name: " 		<< contacts[i - 1].getLastName() << std::endl;
+			std::cout << "Nickname: " 		<< contacts[i - 1].getNickName() << std::endl;
 		}
 		else
 			std::cout << "Invalid index!" << std::endl;
