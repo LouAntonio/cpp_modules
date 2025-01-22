@@ -6,11 +6,11 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 12:12:53 by lantonio          #+#    #+#              #
-#    Updated: 2025/01/21 12:27:19 by lantonio         ###   ########.fr        #
+#    Updated: 2025/01/22 16:29:41 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= dreamjob
+NAME		= braiiinnnzzz
 
 COMPILER	= c++
 
@@ -18,7 +18,6 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= ./srcs/main.cpp \
 			  ./srcs/Zombie.cpp \
-			  ./Zombie.hpp \
 
 OBJS		= $(SRCS:.cpp=.o)
 
