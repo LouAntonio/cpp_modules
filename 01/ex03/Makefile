@@ -6,11 +6,11 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 13:09:15 by lantonio          #+#    #+#              #
-#    Updated: 2025/01/23 15:37:16 by lantonio         ###   ########.fr        #
+#    Updated: 2025/01/23 15:55:57 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= unnecesary_violence
+NAME		= humans
 
 COMPILER	= c++
 
