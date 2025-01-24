@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:36:46 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/16 14:56:57 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:20:56 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int main(int ac, char **av)
 	while (av[i])
 	{
 		std::cout << to_uppercase(av[i]);
+		if (av[i + 1])
+			std::cout << " ";
 		i++;
 	}
 	std::cout << std::endl;
