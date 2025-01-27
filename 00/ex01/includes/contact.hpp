@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:45:15 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/22 14:23:52 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/01/27 07:51:03 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ class Contact {
         void		setNickName(std::string nickName);
         void		setPhoneNumber(std::string phoneNumber);
         void		setDarkestSecret(std::string darkestSecret);
-        std::string	getFirstName();
-        std::string	getLastName();
-        std::string	getNickName();
-        std::string	getPhoneNumber();
-        std::string	getDarkestSecret();
+        std::string	getFirstName() const;
+        std::string	getLastName() const;
+        std::string	getNickName() const;
+        std::string	getPhoneNumber() const;
+        std::string	getDarkestSecret() const;
 
     private:
         std::string	firstName;
