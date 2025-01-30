@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:15:26 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/29 09:50:27 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/01/29 09:59:14 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Fixed::Fixed(const int toConvert) {
 
 Fixed::Fixed(const float toConvert) {
 	std::cout << "Float constructor called" << std::endl;
-    this->value = static_cast<int>(round(toConvert * (1 << 8)));
+    this->value = static_cast<int>(roundf(toConvert * (1 << 8)));
 }
 
 float Fixed::toFloat(void) const {
