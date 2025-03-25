@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:23:01 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/29 09:50:33 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/03/24 12:07:47 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class Fixed {
         Fixed(const float toConvert);
         float toFloat(void) const;
         int toInt(void) const;
-		friend std::ostream &operator<<(std::ostream &outputStream, const Fixed &object);
 };
+	
+std::ostream &operator<<(std::ostream &outputStream, const Fixed &object);
 
 #endif

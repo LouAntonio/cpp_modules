@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:53:05 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/29 10:44:56 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/03/24 12:11:15 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,30 @@ class Fixed {
         Fixed(const float toConvert);
         float toFloat(void) const;
         int toInt(void) const;
-		friend std::ostream &operator<<(std::ostream &outputStream, const Fixed &object);
-
+		
 		bool operator>(const Fixed &fixed) const;
 		bool operator<(const Fixed &fixed) const;
 		bool operator>=(const Fixed &fixed) const;
 		bool operator<=(const Fixed &fixed) const;
 		bool operator==(const Fixed &fixed) const;
 		bool operator!=(const Fixed &fixed) const;
+
 		Fixed operator+(const Fixed &fixed) const;
 		Fixed operator-(const Fixed &fixed) const;
 		Fixed operator*(const Fixed &fixed) const;
 		Fixed operator/(const Fixed &fixed) const;
+
 		Fixed &operator++(void);
 		Fixed operator++(int);
 		Fixed &operator--(void);
 		Fixed operator--(int);
+
 		static Fixed &min(Fixed &a, Fixed &b);
 		static const Fixed &min(const Fixed &a, const Fixed &b);
 		static Fixed &max(Fixed &a, Fixed &b);
 		static const Fixed &max(const Fixed &a, const Fixed &b);
 };
+	
+std::ostream &operator<<(std::ostream &outputStream, const Fixed &object);
 
 #endif
