@@ -6,18 +6,18 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:03:04 by lantonio          #+#    #+#             */
-/*   Updated: 2025/04/11 15:35:26 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:46:01 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): name("default"), hitPoints(100), energyPoints(50), attackDamage(20)
+ClapTrap::ClapTrap(void): name("default"), hitPoints(100), energyPoints(100), attackDamage(30)
 {
 	std::cout << "ClapTrap " << this->name << " default constructor!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): name(name), hitPoints(100), energyPoints(50), attackDamage(20)
+ClapTrap::ClapTrap(std::string name): name(name), hitPoints(100), energyPoints(100), attackDamage(30)
 {
 	std::cout << "ClapTrap " << this->name << " created!" << std::endl;
 }

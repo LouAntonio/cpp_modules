@@ -6,15 +6,15 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:03:19 by lantonio          #+#    #+#             */
-/*   Updated: 2025/04/11 15:23:58 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:45:42 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ScavTrap.hpp"
+#include "../includes/FragTrap.hpp"
 
 void	unknown(void)
 {
-	ScavTrap unknown("unknown");
+	FragTrap unknown("unknown");
 
 	unknown.attack("hmateque");
 	unknown.attack("aquissan");
@@ -23,7 +23,7 @@ void	unknown(void)
 
 void	lantonio(void)
 {
-	ScavTrap	lantonio("lantonio");
+	FragTrap	lantonio("lantonio");
 
 	while (lantonio.getHitPoints())
 	{

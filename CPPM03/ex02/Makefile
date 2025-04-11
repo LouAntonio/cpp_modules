@@ -6,11 +6,11 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/29 11:02:12 by lantonio          #+#    #+#              #
-#    Updated: 2025/04/09 10:36:09 by lantonio         ###   ########.fr        #
+#    Updated: 2025/04/11 15:26:39 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= serena_my_love
+NAME		= repetitive_work
 
 COMPILER	= c++
 
@@ -19,6 +19,7 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS		=	./src/main.cpp \
 				./src/ClapTrap.cpp \
 				./src/ScavTrap.cpp \
+				./src/FragTrap.cpp \
 
 OBJS		= $(SRCS:.cpp=.o)
 
