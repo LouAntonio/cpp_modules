@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:15:26 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/13 15:47:15 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:09:55 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ float Fixed::toFloat(void) const {
 }
 
 int Fixed::toInt(void) const {
-    return static_cast<int>(trunc(this->toFloat()));
+    return static_cast<int>(this->toFloat());
 }
 
 std::ostream &operator<<(std::ostream &outputStream, const Fixed &object)
