@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:52:35 by lantonio          #+#    #+#             */
-/*   Updated: 2025/04/11 15:36:14 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/20 10:34:26 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,16 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src)
     this->setEnergyPoints(src.getEnergyPoints());
     this->setDamage(src.getDamage());
     return (*this);
+}
+
+void ScavTrap::guardGate(void)
+{
+    if (this->getHitPoints() > 0 && this->getEnergyPoints())
+    {
+        std::cout << "ScavTrap " << this->getName() << " is now in 'Gate Keeper' mode!" << std::endl;
+    }
+    else if (this->getHitPoints() <= 0)
+        std::cout << "ScavTrap " << this->getName() << " is dead, and can't get in 'Gate Keeper' mode!" << std::endl;
+    else
+        std::cout << "ScavTrap " << this->getName() << " is out of energy points, and can't get in 'Gate Keeper' mode!" << std::endl;
 }

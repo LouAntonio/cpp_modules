@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:26:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/04/11 15:41:55 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/20 10:42:54 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,12 @@ FragTrap::~FragTrap(void)
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << this->getName() << " is requesting a high five!" << std::endl;
+    if (this->getHitPoints() > 0 && this->getEnergyPoints())
+    {
+        std::cout << "FragTrap " << this->getName() << " is requesting a high five!" << std::endl;
+    }
+    else if (this->getHitPoints() <= 0)
+        std::cout << "FragTrap " << this->getName() << " is dead, and can't request a high five!" << std::endl;
+    else
+        std::cout << "FragTrap " << this->getName() << " is out of energy points, and can't request a high five!" << std::endl;
 }
