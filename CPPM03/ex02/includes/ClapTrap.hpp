@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:03:09 by lantonio          #+#    #+#             */
-/*   Updated: 2025/04/11 15:38:34 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/21 10:12:35 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string		name;
 		int				hitPoints;
 		int				energyPoints;
