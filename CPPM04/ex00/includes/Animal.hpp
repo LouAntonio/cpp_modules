@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:11:43 by lantonio          #+#    #+#             */
-/*   Updated: 2025/04/11 16:15:20 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:56:50 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ class Animal {
 	public:
 		Animal();
 		Animal(const Animal &src);
-		Animal &operator=(const Animal &rhs);
-		~Animal();
+		Animal &operator=(const Animal &src);
+		virtual ~Animal();
 		
 		virtual void makeSound() const;
+		std::string getType() const;
 };
 
 #endif

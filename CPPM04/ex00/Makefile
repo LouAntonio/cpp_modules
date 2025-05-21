@@ -6,17 +6,22 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/29 11:02:12 by lantonio          #+#    #+#              #
-#    Updated: 2025/04/11 16:10:31 by lantonio         ###   ########.fr        #
+#    Updated: 2025/05/21 12:48:50 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= repetitive_work
+NAME		= animals
 
 COMPILER	= c++
 
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 
 SRCS		=	./src/main.cpp \
+				./src/Animal.cpp \
+				./src/Cat.cpp \
+				./src/Dog.cpp \
+				./src/WrongAnimal.cpp \
+				./src/WrongCat.cpp \
 
 OBJS		= $(SRCS:.cpp=.o)
 

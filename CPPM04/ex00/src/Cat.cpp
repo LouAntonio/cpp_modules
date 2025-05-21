@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 10:30:55 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 11:57:23 by lantonio         ###   ########.fr       */
+/*   Created: 2025/05/20 14:17:11 by lantonio          #+#    #+#             */
+/*   Updated: 2025/05/21 11:39:39 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../includes/Cat.hpp"
 
-#ifndef DOG_HPP
-# define DOG_HPP
+Cat::Cat() {
+    std::cout << "Cat default constructor called" << std::endl;
+    this->type = "Cat";
+}
 
-class Dog : public Animal {
-    public:
-        Dog();
-		virtual ~Dog();
+Cat::~Cat() {
+    std::cout << "Cat destructor called" << std::endl;
+}
 
-		void makeSound() const;
-};
-
-#endif
+void Cat::makeSound() const {
+    std::cout << "Meow!" << std::endl;
+}

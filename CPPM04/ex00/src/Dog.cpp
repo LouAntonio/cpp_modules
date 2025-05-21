@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 10:30:55 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 11:57:23 by lantonio         ###   ########.fr       */
+/*   Created: 2025/05/21 10:37:00 by lantonio          #+#    #+#             */
+/*   Updated: 2025/05/21 11:36:24 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../includes/Dog.hpp"
 
-#ifndef DOG_HPP
-# define DOG_HPP
+Dog::Dog(){
+	std::cout << "Dog default contructor called" << std::endl;
+	this->type = "Dog";
+}
 
-class Dog : public Animal {
-    public:
-        Dog();
-		virtual ~Dog();
+Dog::~Dog(){
+	std::cout << "Dog default destructor called" << std::endl;
+}
 
-		void makeSound() const;
-};
-
-#endif
+void Dog::makeSound() const{
+	std::cout << "Ruff!" << std::endl;
+}
