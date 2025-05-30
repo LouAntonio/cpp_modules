@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:36:55 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/20 10:30:06 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:16:15 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ScavTrap : public ClapTrap {
 		ScavTrap &operator=(const ScavTrap &src);
 		~ScavTrap();
 
+		void attack(const std::string &target);
 		void guardGate(void);
 };
 

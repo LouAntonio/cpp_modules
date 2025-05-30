@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:52:35 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/20 10:40:57 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:22:52 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "ScavTrap " << this->getName() << " destroyed!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
 	std::cout << "ScavTrap " << this->getName() << " copy constructor!" << std::endl;
+	*this = src;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
@@ -42,6 +43,19 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 		this->setEnergyPoints(src.getEnergyPoints());
 	}
 	return *this;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+    if (this->energyPoints && this->hitPoints)
+	{
+		std::cout << "ScavTrap " << this->name << " attacked " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+		this->energyPoints -= 1;
+	}
+	if (this->hitPoints <= 0)
+		std::cout << "ScavTrap " << this->name << " is dead!" << std::endl;
+	else if (!this->energyPoints)
+		std::cout << "ScavTrap " << this->name << " is out of energy points!" << std::endl;
 }
 
 void ScavTrap::guardGate(void)

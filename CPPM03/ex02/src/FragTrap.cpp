@@ -6,23 +6,23 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:26:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/20 10:42:54 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:25:36 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/FragTrap.hpp"
 
-FragTrap::FragTrap(void): ScavTrap()
+FragTrap::FragTrap(void): ClapTrap()
 {
     std::cout << "FragTrap " << this->getName() << " default constructor!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name): ScavTrap(name)
+FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
     std::cout << "FragTrap " << this->getName() << " created!" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &copy): ScavTrap(copy)
+FragTrap::FragTrap(FragTrap const &copy): ClapTrap(copy)
 {
     std::cout << "FragTrap " << this->getName() << " copied!" << std::endl;
     *this = copy;

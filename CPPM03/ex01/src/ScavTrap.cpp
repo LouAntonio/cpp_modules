@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:52:35 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/20 10:34:26 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:22:10 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,27 @@ ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
     std::cout << "Assignment operator for ScavTrap called!" << std::endl;
-    this->setName(src.getName());
-    this->setHitPoints(src.getHitPoints());
-    this->setEnergyPoints(src.getEnergyPoints());
-    this->setDamage(src.getDamage());
+    if (this != &src)
+    {
+        this->setName(src.getName());
+        this->setHitPoints(src.getHitPoints());
+        this->setEnergyPoints(src.getEnergyPoints());
+        this->setDamage(src.getDamage());
+    }
     return (*this);
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+    if (this->energyPoints && this->hitPoints)
+	{
+		std::cout << "ScavTrap " << this->name << " attacked " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+		this->energyPoints -= 1;
+	}
+	if (this->hitPoints <= 0)
+		std::cout << "ScavTrap " << this->name << " is dead!" << std::endl;
+	else if (!this->energyPoints)
+		std::cout << "ScavTrap " << this->name << " is out of energy points!" << std::endl;
 }
 
 void ScavTrap::guardGate(void)

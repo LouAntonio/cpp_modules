@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:03:19 by lantonio          #+#    #+#             */
-/*   Updated: 2025/01/30 09:44:36 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:12:44 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	lantonio(void)
 
 	while (lantonio.getHitPoints())
 	{
-		lantonio.takeDamage(2);
+		lantonio.takeDamage(5);
 		lantonio.beRepaired(2);
 	}
 	lantonio.takeDamage(1);
