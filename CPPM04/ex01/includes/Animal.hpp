@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:11:43 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 13:56:50 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:09:04 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+#include <stdlib.h>
 
 class Animal {
 	protected:

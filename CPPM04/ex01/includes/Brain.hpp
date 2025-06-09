@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:05:35 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 16:33:04 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/05 09:54:27 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Brain {
 	private:
-		std::string ideas[99];
+		std::string ideas[100];
 
 	public:
 		Brain();
