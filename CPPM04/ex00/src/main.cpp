@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:10:39 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 13:57:56 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/09 12:11:18 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int main()
 	std::cout << wrongCat->getType() << " " << std::endl;
 	wrongAnimal->makeSound();
 	wrongCat->makeSound();
+
+	delete animal;
+	delete dog;
+	delete cat;
+	delete wrongAnimal;
+	delete wrongCat;
 
 	return (0);
 }
