@@ -6,13 +6,13 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/29 11:02:12 by lantonio          #+#    #+#              #
-#    Updated: 2025/05/21 12:48:50 by lantonio         ###   ########.fr        #
+#    Updated: 2025/06/05 09:50:30 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= animals
 
-COMPILER	= c++
+CXX			= c++
 
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 
@@ -26,11 +26,11 @@ SRCS		=	./src/main.cpp \
 OBJS		= $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
-	@$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "\033[1;32mSUCCESS!\033[0m"
 
 %.o:%.cpp
-	@$(COMPILER) $(FLAGS) -c $< -o $@
+	@$(CXX) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
