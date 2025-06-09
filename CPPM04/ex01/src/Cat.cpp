@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:17:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/06 20:03:03 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/09 10:58:07 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Cat &Cat::operator=(const Cat &src){
 
 Cat::~Cat() {
 	this->brain->~Brain();
+	delete this->brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 10:37:00 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/05 12:06:32 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/09 10:57:54 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ std::string Dog::getIdea(int i) const{
 
 Dog::~Dog(){
 	this->brain->~Brain();
+	delete this->brain;
 	std::cout << "Dog default destructor called" << std::endl;
 }

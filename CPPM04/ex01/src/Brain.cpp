@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:10:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/06 10:46:08 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/09 10:57:41 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Brain &Brain::operator=(const Brain &src) {
 }
 
 Brain::~Brain(){
-	std::cout << "Brain default destructor called" << std::endl;
+	std::cout << "BRAIN DESTRUCTED!" << std::endl;
 }
 
 std::string Brain::getIdea(int i) const {
