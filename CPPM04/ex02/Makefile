@@ -6,11 +6,11 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/29 11:02:12 by lantonio          #+#    #+#              #
-#    Updated: 2025/06/09 11:06:57 by lantonio         ###   ########.fr        #
+#    Updated: 2025/06/20 13:30:48 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= abstract_class_not_instantiable
+NAME		= abstract_class
 
 CXX			= c++
 

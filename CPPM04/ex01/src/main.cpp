@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:10:39 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/09 10:59:08 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/20 13:22:52 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int main()
 {
 	int					qtd = 2;
 	Animal				*animalArr[qtd];
-	Cat					*cat;
 	Dog					*dog;
+	Dog					*dog2;
 	int					i = -1;
+	
+	
 
 	while (++i < qtd)
 	{
@@ -39,27 +41,24 @@ int main()
 		delete animalArr[i];
 	}
 
-	std::cout << "\n---\n" << std::endl;
+	std::cout << "\n--- CÓPIA PROFUNDA ---" << std::endl;
 
-	cat = new Cat();
 	dog = new Dog();
 
-	cat->setIdea(1, "Cat's idea");
-	dog->setIdea(2, "Dat's idea");
-	cat->setIdea(-1, "Cat's idea");
-	dog->setIdea(101, "Dat's idea");
+	dog->setIdea(0, "Dog's idea 0");
+	dog2 = new Dog(*dog);
 
-	std::cout << cat->getIdea(1) << std::endl;
-	std::cout << dog->getIdea(2) << std::endl;
+	std::cout << dog->getIdea(0) << std::endl;
+	std::cout << dog2->getIdea(0) << std::endl;
 
-	std::cout << cat->getIdea(2) << std::endl;
-	std::cout << dog->getIdea(1) << std::endl;
+	dog->setIdea(0, "Dog's idea 1");
+	std::cout << dog->getIdea(0) << std::endl;
+	std::cout << dog2->getIdea(0) << std::endl;
 
-	std::cout << cat->getIdea(-1) << std::endl;
-	std::cout << dog->getIdea(101) << std::endl;
+	std::cout << "\n--- DESTRUIDORES ---" << std::endl;
 
-	delete cat;
 	delete dog;
+	delete dog2;
 
 	return (0);
 }

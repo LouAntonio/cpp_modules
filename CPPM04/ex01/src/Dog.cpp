@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 10:37:00 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/09 10:57:54 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/20 13:09:10 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,11 @@ Dog::Dog(){
 	std::cout << "Dog default contructor called" << std::endl;
 	this->type = "Dog";
 	this->brain = new Brain();
-	if (!this->brain)
-	{
-		std::cerr << "Memory allocation failed for Brain" << std::endl;
-		exit(1);
-	}
 }
 
 Dog::Dog(const Dog &src) : Animal(src) {
 	this->brain = new Brain(*src.brain);
-	std::cout << "Cat cpy constructor called!" << std::endl;
+	std::cout << "Dog cpy constructor called!" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &src){
@@ -36,6 +31,11 @@ Dog &Dog::operator=(const Dog &src){
 	delete brain;
 	brain = new Brain(*src.brain);
 	return (*this);
+}
+
+Dog::~Dog(){
+	delete this->brain;
+	std::cout << "Dog default destructor called" << std::endl;
 }
 
 void Dog::makeSound() const{
@@ -51,8 +51,3 @@ std::string Dog::getIdea(int i) const{
 	return brain ? brain->getIdea(i) : "";
 }
 
-Dog::~Dog(){
-	this->brain->~Brain();
-	delete this->brain;
-	std::cout << "Dog default destructor called" << std::endl;
-}

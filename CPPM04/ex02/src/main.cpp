@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:10:39 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/09 12:01:38 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/20 13:30:25 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 int main()
 {
-	// Animal		*animal;
-	// animal = new Animal();
-	// std::cout << animal->getType() << std::endl;
-	// delete animal;
+	
+	// Animal animal = new Animal();
+	// (void)animal;
 
-	Dog			*dog = new Dog();
-	Cat			*cat = new Cat();
+	Animal *cat = new Cat();
+	Animal *dog = new Dog();
 
-	std::cout << dog->getType() << std::endl;
-	std::cout << cat->getIdea(123) << std::endl;
+	(void)cat;
+	(void)dog;
 
-	delete dog;
+	std::cout << "\n--- DESTRUIDORES ---" << std::endl;
+	//delete animal;
 	delete cat;
-
-    return 0;
+	delete dog;
+	return (0);
 }

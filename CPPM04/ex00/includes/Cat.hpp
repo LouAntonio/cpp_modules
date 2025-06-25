@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:12:20 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 11:40:16 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/18 10:57:02 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 class Cat : public Animal {
 	public:
 		Cat();
+		Cat(const Cat &src);
+		Cat &operator=(const Cat &src);
 		virtual ~Cat();
 		
 		void makeSound() const;

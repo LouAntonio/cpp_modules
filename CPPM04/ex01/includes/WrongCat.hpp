@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:42:00 by lantonio          #+#    #+#             */
-/*   Updated: 2025/05/21 13:57:19 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/20 13:03:50 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
+		WrongCat(const WrongCat &src);
+		WrongCat &operator=(const WrongCat &src);
 		virtual ~WrongCat();
+
+		void makeSound() const;
 };
 
 #endif

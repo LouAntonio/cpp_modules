@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:17:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/06/09 11:51:33 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/06/18 11:17:50 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ Cat::Cat() {
 
 Cat::Cat(const Cat &src) : Animal(src) {
 	this->brain = new Brain(*src.brain);
-	std::cout << "Cat cpy constructor called NEW!" << std::endl;
+	std::cout << "Cat cpy constructor called!" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &src){
 	std::cout << "Cat assignment constructor called!" << std::endl;
 	if (this == &src)
 	{
-		std::cout << "Retornando2" << std::endl;
 		return (*this);
 	}
 	Animal::operator=(src);
@@ -41,7 +40,6 @@ Cat &Cat::operator=(const Cat &src){
 }
 
 Cat::~Cat() {
-	this->brain->~Brain();
 	delete this->brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
