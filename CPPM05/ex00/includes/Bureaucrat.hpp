@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:58:18 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/01 11:00:18 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/01 12:09:29 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Bureaucrat {
 		virtual ~Bureaucrat();
 
 		std::string	getName(void) const;
-		int			getGrade(void);
+		int			getGrade(void) const;
 		void		incrementGrade(void);
 		void		decrementGrade(void);
 
@@ -41,5 +41,7 @@ class Bureaucrat {
 			virtual const char* what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &outputStream, const Bureaucrat &b);
 
 #endif
