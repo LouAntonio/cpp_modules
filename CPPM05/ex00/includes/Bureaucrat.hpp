@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:58:18 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/01 09:09:30 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/01 11:00:18 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <exception>
 
 class Bureaucrat {
 	private:
@@ -31,6 +32,14 @@ class Bureaucrat {
 		int			getGrade(void);
 		void		incrementGrade(void);
 		void		decrementGrade(void);
+
+		class GradeTooHighException : public std::exception {
+			virtual const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception {
+			virtual const char* what() const throw();
+		};
 };
 
 #endif
