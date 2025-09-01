@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:06:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/01 12:50:55 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/01 12:56:03 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int main(void)
 
 		b2.incrementGrade();																	// increment
 		b2.decrementGrade();																	// decrement
-		std::cout << b3.getName() << ", bureaucrat grade " << b3.getGrade() << std::endl;		// getters
-		std::cout << b3 << std::endl;															// << operator overload
+		std::cout << b1.getName() << ", bureaucrat grade " << b1.getGrade() << std::endl;		// getters
+		std::cout << b2 << std::endl;															// << operator overload
 		//b2->decrementGrade();																	// exception
 		b1 = b2;																				// assignment operator
+		std::cout << "---" << std::endl;
 	} catch (std::exception &e)
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
