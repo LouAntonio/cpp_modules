@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 08:15:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/01 12:09:30 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/01 12:36:09 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade) : name(_name) {
 	std::cout << "Default Bureaucrat (named) constructor called!" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src)
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name)
 {
 	std::cout << "Bureaucrat default cpy constructor called!" << std::endl;
 	*this = src;
