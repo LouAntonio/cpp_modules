@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 08:15:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/02 10:46:24 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/02 11:37:03 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,9 @@ void Bureaucrat::decrementGrade(void)
 void::Bureaucrat::signForm(Form &f) {
 	try {
 		f.beSigned(*this);
+		std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
 	} catch (std::exception &e) {
-		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << ".";
+		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;
 	}
 }
 
