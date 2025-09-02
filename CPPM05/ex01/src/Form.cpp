@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:54:53 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/02 11:12:08 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/02 11:20:02 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,8 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return "Error: Grade too Low!";
 }
 
+std::ostream &operator<<(std::ostream &outputStream, const Form &f)
+{
+	outputStream << "Form " << f.getName() << " is " << f.getSigned() << " to signed, need grade " << f.getGradeToSign() << " or higher to bee signed, and grade " << f.getGradeToExec() << " or higher to be executed!";
+	return outputStream;
+}
