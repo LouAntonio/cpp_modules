@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:53:56 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/03 10:01:29 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/03 12:03:53 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include "AForm.hpp"
 
-class RobotomyRequestForm {
-	private:
-		std::string name;
-		const int   to_sign;
-		const int   to_exec;
-
+class RobotomyRequestForm : public AForm {
 	public:
 		RobotomyRequestForm();
-		RobotomyRequestForm(std::string _name);
+		RobotomyRequestForm(std::string _name, std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm &src);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
 		virtual ~RobotomyRequestForm();
