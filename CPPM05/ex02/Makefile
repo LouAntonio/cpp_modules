@@ -6,15 +6,18 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/01 09:09:42 by lantonio          #+#    #+#              #
-#    Updated: 2025/09/03 09:42:08 by lantonio         ###   ########.fr        #
+#    Updated: 2025/09/08 12:31:22 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= form28
 
 SRCS	=	./src/main.cpp \
+			./src/AForm.cpp \
 			./src/Bureaucrat.cpp \
-			./src/Form.cpp \
+			./src/RobotomyRequestForm.cpp \
+			./src/ShrubberyCreationForm.cpp \
+			./src/PresidentialPardonForm.cpp \
 
 CXX			= c++
 
