@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:43:58 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/03 12:01:25 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/04 13:24:03 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm{
 		AForm &operator=(const AForm &src);
 		virtual ~AForm();
 
-		virtual void	execute() = 0;
+		virtual void	execute(void) = 0;
 		std::string		getName(void) const;
 		std::string		getTarget(void) const;
 		int				getGradeToSign(void) const;

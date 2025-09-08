@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 08:15:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/02 11:46:24 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/04 13:23:18 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return "Grade too Low!";
 }
 
-void Bureaucrat::incrementGrade(void)
+void	Bureaucrat::incrementGrade(void)
 {
 	grade--;
 	if (grade < 1)
@@ -68,7 +68,7 @@ void Bureaucrat::incrementGrade(void)
 	//std::cout << "Bureaucrat " << getName() << " grade incremented from " << getGrade() + 1 << " to " << getGrade() << std::endl;
 }
 
-void Bureaucrat::decrementGrade(void)
+void	Bureaucrat::decrementGrade(void)
 {
 	grade++;
 	if (grade > 150)
@@ -76,7 +76,7 @@ void Bureaucrat::decrementGrade(void)
 	//std::cout << "Bureaucrat " << getName() << " grade decremented from " << getGrade() - 1 << " to " << getGrade() << std::endl;
 }
 
-void::Bureaucrat::signForm(Form &f) {
+void	Bureaucrat::signForm(Form &f) {
 	try {
 		f.beSigned(*this);
 		std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
@@ -84,6 +84,8 @@ void::Bureaucrat::signForm(Form &f) {
 		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;
 	}
 }
+
+void	Bureaucrat::execute
 
 std::ostream &operator<<(std::ostream &outputStream, const Bureaucrat &b)
 {

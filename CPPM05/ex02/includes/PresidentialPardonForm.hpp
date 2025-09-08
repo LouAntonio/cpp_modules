@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:57:51 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/03 12:04:23 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/04 13:17:08 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm(const PresidentialPardonForm &src);
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &src);
 		virtual ~PresidentialPardonForm();
+
+		void	execute(void);
 };
 
 #endif
