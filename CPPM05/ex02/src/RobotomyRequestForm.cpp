@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:35:37 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/04 13:18:20 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:07:15 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm() {
 	std::cout << "RobotomyRequestForm default constructor called!" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string _name, std::string target) : AForm(_name, target, 72, 137) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", target, 72, 137) {
 	std::cout << "RobotomyRequestForm default (named) constructor called!" << std::endl;
 }
 

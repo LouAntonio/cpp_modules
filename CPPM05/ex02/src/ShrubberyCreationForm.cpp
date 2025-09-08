@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:58:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/04 13:18:54 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:07:28 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm() {
 	std::cout << "ShrubberyCreationForm default constructor called!" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string _name, std::string target) : AForm(_name, target, 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", target, 145, 137) {
 	std::cout << "ShrubberyCreationForm default (named) constructor called!" << std::endl;
 }
 
