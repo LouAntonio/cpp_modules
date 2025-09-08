@@ -1,58 +1,90 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*   AAForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 11:50:44 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:01:57 by lantonio         ###   ########.fr       */
+/*   Created: 2025/09/02 09:54:53 by lantonio          #+#    #+#             */
+/*   Updated: 2025/09/08 09:19:45 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AForm.hpp"
 
-AForm::AForm() : to_sign(1), to_exec(1), name("Default"), target("target") {
-	std::cout << "AForm default constructor called!";
+AForm::AForm() : name("Default"), _signed(false), target("default"), to_sign(2), to_exec(1) {
+	std::cout << "AForm default constructor called!" << std::endl;
 }
 
-AForm::AForm(std::string _name, std::string _target, int _to_sign, int _to_exec) : to_sign(_to_sign), to_exec(_to_exec) {
-	name = _name;
-	target = _target;
-	std::cout << "AForm default (named) constructor called!";
+AForm::AForm(std::string _name, std::string _target, bool is_signed, int to_sign, int to_exec) : name(_name), target(_target), to_sign(to_sign), to_exec(to_exec) {
+	if (to_sign < 1 || to_exec < 1)
+		throw AForm::GradeTooHighException();
+	if (to_sign > 150 || to_exec > 150)
+		throw AForm::GradeTooLowException();
+	_signed = is_signed;
+	std::cout << "AForm default (named) constructor called!" << std::endl;
 }
 
-AForm::AForm(const AForm &src) : to_sign(src.to_sign), to_exec(src.to_exec) {
-	std::cout << "AForm cpy constructor called!";
-	*this = src;
+AForm::AForm(const AForm &src) : name(src.name), target(src.target), _signed(src._signed), to_sign(src.to_sign), to_exec(src.to_exec) {
+	std::cout << "AForm default cpy constructor called!" << std::endl;
 }
 
-AForm &AForm::operator=(const AForm &src) {
+AForm &AForm::operator=(const AForm &src)
+{
+	std::cout << "AForm  assignment operator called!" << std::endl;
 	if (this != &src)
-	{
-		this->name = src.name;
-		this->target = src.target;
-	}
+		this->_signed = src._signed;
 	return *this;
 }
 
 AForm::~AForm() {
-	std::cout << "AForm default destructor called!";
+	std::cout << "AForm default destructor called!" << std::endl;
 }
 
-
-std::string	AForm::getName(void) const {
+std::string AForm::getName(void) const {
 	return name;
 }
 
-std::string	AForm::getTarget(void) const {
+std::string AForm::getTarget(void) const {
 	return target;
 }
 
-int	AForm::getGradeToSign(void) const {
+bool AForm::getSigned(void) const {
+	return _signed;
+}
+
+int AForm::getGradeToSign(void) const {
 	return to_sign;
 }
 
-int	AForm::getGradeToExec(void) const {
+int AForm::getGradeToExec(void) const {
 	return to_exec;
+}
+
+void AForm::beSigned(Bureaucrat &b) {
+	if (b.getGrade() <= to_sign)
+	{
+		if (_signed)
+		{
+			std::cout << "AForm allready signed!" << std::endl;
+			return ;
+		}
+		_signed = true;
+	} else {
+		throw AForm::GradeTooLowException();
+	}
+}
+
+const char* AForm::GradeTooHighException::what() const throw() {
+	return "Error: Grade too High!";
+}
+
+const char* AForm::GradeTooLowException::what() const throw() {
+	return "Error: Grade too Low!";
+}
+
+std::ostream &operator<<(std::ostream &outputStream, const AForm &f)
+{
+	outputStream << "AForm " << f.getName() << " is " << f.getSigned() << " to signed, need grade " << f.getGradeToSign() << " or higher to bee signed, and grade " << f.getGradeToExec() << " or higher to be executed!";
+	return outputStream;
 }

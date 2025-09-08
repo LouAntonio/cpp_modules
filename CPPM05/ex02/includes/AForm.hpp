@@ -5,35 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 09:43:58 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:01:26 by lantonio         ###   ########.fr       */
+/*   Created: 2025/09/02 09:24:32 by lantonio          #+#    #+#             */
+/*   Updated: 2025/09/08 09:26:54 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_HPP
-#define AFORM_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
+#include <exception>
+#include "./Bureaucrat.hpp"
 
-class AForm{
-	protected:
-		std::string name;
-		std::string	target;
-		const int   to_sign;
-		const int   to_exec;
+class Bureaucrat;
+
+class AForm {
+	private:
+		const std::string	name;
+		const std::string	target;
+		bool				_signed;
+		const int			to_sign;
+		const int			to_exec;
 
 	public:
 		AForm();
-		AForm(std::string _name, std::string _target, int _to_sign, int _to_exec);
+		AForm(std::string _name, std::string _target, bool is_signed, int to_sign, int to_exec);
 		AForm(const AForm &src);
 		AForm &operator=(const AForm &src);
 		virtual ~AForm();
 
-		virtual void	execute(void) = 0;
 		std::string		getName(void) const;
 		std::string		getTarget(void) const;
+		bool			getSigned(void) const;
 		int				getGradeToSign(void) const;
 		int				getGradeToExec(void) const;
+
+		void			beSigned(Bureaucrat &b);
+		virtual void	execute(void) = 0;
+
+		class GradeTooHighException : public std::exception {
+			virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception {
+			virtual const char *what() const throw();
+		};
 };
+
+std::ostream &operator<<(std::ostream &outputStream, const AForm &f);
 
 #endif
