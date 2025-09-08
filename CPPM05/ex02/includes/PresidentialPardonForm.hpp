@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:57:51 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:49:00 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 12:27:26 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
-#include "AForm.hpp"
+#include "./AForm.hpp"
 
 class PresidentialPardonForm : public AForm {
 	public:

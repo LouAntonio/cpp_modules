@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:53:56 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:49:01 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 12:28:10 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
-#include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
+#include "./AForm.hpp"
 
 class RobotomyRequestForm : public AForm {
 	public:
