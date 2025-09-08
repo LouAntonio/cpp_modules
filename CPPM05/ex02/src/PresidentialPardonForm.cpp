@@ -6,17 +6,17 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 12:05:51 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:06:26 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:42:27 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm() {
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", "DefaultTarget", false, 25, 5) {
 	std::cout << "PresidentialPardonForm default constructor called!" << std:: endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", target, 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", target, false, 25, 5) {
 	std::cout << "PresidentialPardonForm default (named) constructor called!" << std::endl;
 }
 
@@ -27,10 +27,8 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src) {
 	std::cout << "PresidentialPardonForm assignment operator called!" << std::endl;
-	if (this != &src) {
-		this->name = src.name;
-		this->target = src.target;
-	}
+	if (this != &src)
+		AForm::operator=(src);
 	return *this;
 }
 
@@ -39,5 +37,5 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 }
 
 void    PresidentialPardonForm::execute(void) {
-    std::cout << target << "has been pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << this->getTarget() << "has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
