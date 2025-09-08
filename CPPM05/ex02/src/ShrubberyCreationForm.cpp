@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:58:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:39:35 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:57:18 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm destructor called!" << std::endl;
 }
 
-void    ShrubberyCreationForm::execute(void) {
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+	if (!this->getSigned())
+	{
+		std::cout << "Error, Form not signed!" << std::endl:
+		return:
+	}
+	if (executor.getGrade() > this->getGradeToExec())
+		Bureaucrat::GradeTooLowException();
 	std::cout << "File " << this->getTarget() << " created!" << std::endl;
 }

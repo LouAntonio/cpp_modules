@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:45:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:36:32 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:49:03 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
 		virtual ~ShrubberyCreationForm();
 
-		void	execute(void);
+		void	execute(Bureaucrat const &executor) const;
 };
 
 #endif

@@ -6,12 +6,12 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:24:32 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:26:54 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:48:11 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <exception>
@@ -41,7 +41,7 @@ class AForm {
 		int				getGradeToExec(void) const;
 
 		void			beSigned(Bureaucrat &b);
-		virtual void	execute(void) = 0;
+		virtual void	execute(Bureaucrat const &executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			virtual const char *what() const throw();

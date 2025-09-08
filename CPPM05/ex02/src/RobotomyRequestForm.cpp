@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:35:37 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:41:29 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:57:08 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,22 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm default destructor called!" << std::endl;
 }
 
-void	RobotomyRequestForm::execute(void) {
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	if (!this->getSigned())
+	{
+		std::cout << "Error, Form not signed!" << std::endl:
+		return:
+	}
+	if (executor.getGrade() > this->getGradeToExec())
+		Bureaucrat::GradeTooLowException();
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_real_distribution<> dist(0, 1);
 
 	int choice = dist(gen);
 	if (choice) {
-		std::cout << this->getSigned() << " has been robotomized successfully" << std::endl;
+		std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
 	} else {
-		std::cout << "Failed to robotomize " <<  this->getSigned() << std::endl;
+		std::cout << "Failed to robotomize " <<  this->getTarget() << std::endl;
 	}
 }
