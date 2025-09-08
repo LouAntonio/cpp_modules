@@ -6,11 +6,12 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 08:15:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/04 13:23:18 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 12:31:50 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(1) {
 	std::cout << "Default Bureaucrat constructor called!" << std::endl;
@@ -76,7 +77,7 @@ void	Bureaucrat::decrementGrade(void)
 	//std::cout << "Bureaucrat " << getName() << " grade decremented from " << getGrade() - 1 << " to " << getGrade() << std::endl;
 }
 
-void	Bureaucrat::signForm(Form &f) {
+void	Bureaucrat::signForm(AForm &f) {
 	try {
 		f.beSigned(*this);
 		std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
@@ -85,10 +86,7 @@ void	Bureaucrat::signForm(Form &f) {
 	}
 }
 
-void	Bureaucrat::execute
-
-std::ostream &operator<<(std::ostream &outputStream, const Bureaucrat &b)
-{
-	outputStream << b.getName() << ", bureaucrat grade " << b.getGrade() << "";
-	return outputStream;
+void	Bureaucrat::executeForm(AForm const & form) const {
+	form.execute(*this);
+	std::cout << this->getName() << " executed " << form.getName() << std::endl;
 }

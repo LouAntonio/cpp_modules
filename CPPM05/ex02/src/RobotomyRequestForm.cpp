@@ -6,12 +6,11 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:35:37 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:57:08 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 12:27:03 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/RobotomyRequestForm.hpp"
-#include <random>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", "DefaultTarget", false, 72, 137) {
 	std::cout << "RobotomyRequestForm default constructor called!" << std::endl;
@@ -37,19 +36,19 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm default destructor called!" << std::endl;
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 	if (!this->getSigned())
 	{
-		std::cout << "Error, Form not signed!" << std::endl:
-		return:
+		std::cout << "Error, Form not signed!" << std::endl;
+		return;
 	}
 	if (executor.getGrade() > this->getGradeToExec())
-		Bureaucrat::GradeTooLowException();
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_real_distribution<> dist(0, 1);
+		throw Bureaucrat::GradeTooLowException();
 
-	int choice = dist(gen);
+	std::srand(std::time(NULL));
+
+	int choice = std::rand() % 2;
 	if (choice) {
 		std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
 	} else {

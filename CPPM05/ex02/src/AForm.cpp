@@ -12,7 +12,7 @@
 
 #include "../includes/AForm.hpp"
 
-AForm::AForm() : name("Default"), _signed(false), target("default"), to_sign(2), to_exec(1) {
+AForm::AForm() : name("Default"), target("default"), _signed(false), to_sign(2), to_exec(1) {
 	std::cout << "AForm default constructor called!" << std::endl;
 }
 
