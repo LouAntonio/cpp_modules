@@ -22,7 +22,7 @@ AForm::AForm(std::string _name, std::string _target, bool is_signed, int to_sign
 	if (to_sign > 150 || to_exec > 150)
 		throw AForm::GradeTooLowException();
 	_signed = is_signed;
-	std::cout << "AForm default (named) constructor called!" << std::endl;
+	std::cout << "AForm default (targeted) constructor called!" << std::endl;
 }
 
 AForm::AForm(const AForm &src) : name(src.name), target(src.target), _signed(src._signed), to_sign(src.to_sign), to_exec(src.to_exec) {
@@ -66,7 +66,7 @@ void AForm::beSigned(Bureaucrat &b) {
 	{
 		if (_signed)
 		{
-			std::cout << "AForm allready signed!" << std::endl;
+			std::cout << "Form " << this->getName() << " allready signed!" << std::endl;
 			return ;
 		}
 		_signed = true;
@@ -85,6 +85,6 @@ const char* AForm::GradeTooLowException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &outputStream, const AForm &f)
 {
-	outputStream << "AForm " << f.getName() << " is " << f.getSigned() << " to signed, need grade " << f.getGradeToSign() << " or higher to bee signed, and grade " << f.getGradeToExec() << " or higher to be executed!";
+	outputStream << "Form " << f.getName() << " target is " << f.getTarget() << ", is " << f.getSigned() << " to signed, need grade " << f.getGradeToSign() << " or higher to bee signed, and grade " << f.getGradeToExec() << " or higher to be executed!";
 	return outputStream;
 }
