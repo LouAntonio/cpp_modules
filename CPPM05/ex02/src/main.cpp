@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:06:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 16:57:49 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:11:31 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,40 @@
 int main(void)
 {
 	try {
-		Bureaucrat				b1 =  Bureaucrat("LouAntonio", 137);
-		ShrubberyCreationForm	*s1 = new ShrubberyCreationForm("alvo");
+		Bureaucrat				b1 =  Bureaucrat("LouAntonio", 6);
+		Bureaucrat				b2 =  Bureaucrat("Burocrata", 30);
+		ShrubberyCreationForm	*s1 = new ShrubberyCreationForm("tree.txt");
+		RobotomyRequestForm		*r1 = new RobotomyRequestForm("psychopath");
+		PresidentialPardonForm *p1 = new PresidentialPardonForm("stealer");
+
+		ShrubberyCreationForm	*s2 = new ShrubberyCreationForm("tree2.txt");
+		RobotomyRequestForm		*r2 = new RobotomyRequestForm("psychopath2");
+		PresidentialPardonForm *p2 = new PresidentialPardonForm("stealer2");
+		std::cout << "---" << std::endl;
+
+		std::cout << std::endl << "--- TESTES BUROCRATA ---" << std::endl;
+		b1.executeForm(*s1);
+		b1.signForm(*s1);
+		b1.signForm(*r1);
+		b1.executeForm(*r1);
+		b1.executeForm(*s1);
+		b1.signForm(*p1);
+		b1.executeForm(*p1);
+
+		std::cout << std::endl << "--- TESTES FORMULÁRIOS ---" << std::endl;
+		s2->execute(b2);
+		s1->beSigned(b2);
+		s2->beSigned(b2);
+		s2->beSigned(b2);
+		s2->execute(b2);
 
 		std::cout << "---" << std::endl;
-		ShrubberyCreationForm	s2 = *s1;
-		std::cout << "---" << std::endl;
-		
-		b1.signForm(*s1);
-		s1->execute(b1);
-		
-		std::cout << "---" << std::endl;
 		delete	s1;
+		delete	r1;
+		delete	p1;
+		delete	s2;
+		delete	r2;
+		delete	p2;
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
