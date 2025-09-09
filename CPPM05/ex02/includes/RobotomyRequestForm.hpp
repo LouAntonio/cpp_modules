@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:53:56 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:10 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/09 10:26:20 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
 		virtual ~RobotomyRequestForm();
 
-		void	execute(Bureaucrat const &executor) const;
+		int	execute(Bureaucrat const &executor) const;
 };
 
 #endif
