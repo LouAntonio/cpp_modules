@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:58:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 16:59:20 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:04:59 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", target, false, 145, 137) {
-	std::cout << "ShrubberyCreationForm default (named) constructor called!" << std::endl;
+	std::cout << "ShrubberyCreationForm default (targeted) constructor called!" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src) {
 	std::cout << "ShrubberyCreationForm cpy constructor called!" << std::endl;
-	*this = src;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src) {
@@ -55,12 +54,9 @@ void drawAsciiTree(int height, std::ofstream &file) {
 	}
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+int	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	if (!this->getSigned())
-	{
-		std::cout << "Error, Form not signed!" << std::endl;
-		return;
-	}
+		throw Bureaucrat::FormNotSigned();
 	if (executor.getGrade() > this->getGradeToExec())
 		throw Bureaucrat::GradeTooLowException();
 	std::ofstream file((this->getTarget() + "_shrubbery").c_str());
@@ -71,4 +67,5 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	}
 	else
 		std::cout << "Error while creating file " << this->getTarget() << "!" << std::endl;
+	return 1;
 }
