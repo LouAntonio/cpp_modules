@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:58:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 09:59:05 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 16:59:20 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,25 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm destructor called!" << std::endl;
 }
 
+void drawAsciiTree(int height, std::ofstream &file) {
+	for (int i = 0; i < height; ++i) {
+		for (int j = 0; j < height - i - 1; ++j) {
+			file << " ";
+		}
+		for (int k = 0; k < 2 * i + 1; ++k) {
+			file << "*";
+		}
+		file << std::endl;
+	}
+
+	for (int i = 0; i < height / 3; ++i) {
+		for (int j = 0; j < height - 1; ++j) {
+			file << " ";
+		}
+		file << "|" << std::endl;
+	}
+}
+
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	if (!this->getSigned())
 	{
@@ -43,6 +62,13 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		return;
 	}
 	if (executor.getGrade() > this->getGradeToExec())
-		Bureaucrat::GradeTooLowException();
-	std::cout << "File " << this->getTarget() << " created!" << std::endl;
+		throw Bureaucrat::GradeTooLowException();
+	std::ofstream file((this->getTarget() + "_shrubbery").c_str());
+	if (file)
+	{
+		std::cout << "File " << this->getTarget() << "_shrubbery created!" << std::endl;
+		drawAsciiTree(7, file);
+	}
+	else
+		std::cout << "Error while creating file " << this->getTarget() << "!" << std::endl;
 }

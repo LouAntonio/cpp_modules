@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:06:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 12:40:37 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 16:57:49 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,18 @@
 int main(void)
 {
 	try {
-		Bureaucrat				b1 =  Bureaucrat("LouAntonio", 6);
-		AForm					*s1 = new ShrubberyCreationForm("alvo");
-		AForm					*r1 = new RobotomyRequestForm("psychopath");
-		AForm					*p1 = new PresidentialPardonForm("burglar");
+		Bureaucrat				b1 =  Bureaucrat("LouAntonio", 137);
+		ShrubberyCreationForm	*s1 = new ShrubberyCreationForm("alvo");
+
+		std::cout << "---" << std::endl;
+		ShrubberyCreationForm	s2 = *s1;
 		std::cout << "---" << std::endl;
 		
-		
-		s1->execute(b1);
 		b1.signForm(*s1);
-		b1.signForm(*r1);
-		b1.signForm(*p1);
 		s1->execute(b1);
-		r1->execute(b1);
-		p1->execute(b1);
+		
 		std::cout << "---" << std::endl;
+		delete	s1;
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}

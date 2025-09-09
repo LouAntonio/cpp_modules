@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:45:11 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 12:27:22 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 16:37:17 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "./AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {

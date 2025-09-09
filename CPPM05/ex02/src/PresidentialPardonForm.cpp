@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 12:05:51 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 12:11:40 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/08 12:57:26 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 		return;
 	}
 	if (executor.getGrade() > this->getGradeToExec())
-		Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
     std::cout << this->getTarget() << "has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
