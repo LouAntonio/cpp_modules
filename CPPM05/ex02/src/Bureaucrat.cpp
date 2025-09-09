@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 08:15:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 13:04:57 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:11:22 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return "Grade too Low!";
 }
 
+const char* Bureaucrat::FormNotSigned::what() const throw () {
+	return "Form not signed!";
+}
+
 void	Bureaucrat::incrementGrade(void)
 {
 	grade--;
@@ -79,14 +83,22 @@ void	Bureaucrat::decrementGrade(void)
 
 void	Bureaucrat::signForm(AForm &f) {
 	try {
-		f.beSigned(*this);
-		std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
+		if (f.getSigned())
+			std::cout << "Form " << f.getName() << " is allready signed!" << std::endl;
+		else {
+			f.beSigned(*this);
+			std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
+		}
 	} catch (std::exception &e) {
 		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;
 	}
 }
 
 void	Bureaucrat::executeForm(AForm const & form) const {
-	form.execute(*this);
-	std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	try {
+		if (form.execute(*this))
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	} catch (std::exception &e) {
+		std::cout << "Error: bureaucrat could not execute form because: " << e.what() << std::endl;
+	}
 }

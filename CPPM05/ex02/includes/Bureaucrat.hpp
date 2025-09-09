@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:58:18 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/08 12:27:30 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:10:52 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ class Bureaucrat {
 		};
 
 		class GradeTooLowException : public std::exception {
+			virtual const char* what() const throw();
+		};
+
+		class FormNotSigned : public std::exception {
 			virtual const char* what() const throw();
 		};
 };
