@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:06:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/09 13:11:31 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/16 11:42:44 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 int main(void)
 {
 	try {
-		Bureaucrat				b1 =  Bureaucrat("LouAntonio", 6);
-		Bureaucrat				b2 =  Bureaucrat("Burocrata", 30);
+		Bureaucrat				b1 =  Bureaucrat("LouAntonio", 30);
+		Bureaucrat				b2 =  Bureaucrat("Burocrata", 3);
 		ShrubberyCreationForm	*s1 = new ShrubberyCreationForm("tree.txt");
 		RobotomyRequestForm		*r1 = new RobotomyRequestForm("psychopath");
 		PresidentialPardonForm *p1 = new PresidentialPardonForm("stealer");
@@ -31,20 +31,17 @@ int main(void)
 		std::cout << "---" << std::endl;
 
 		std::cout << std::endl << "--- TESTES BUROCRATA ---" << std::endl;
+		b1.signForm(*s1);
 		b1.executeForm(*s1);
 		b1.signForm(*s1);
-		b1.signForm(*r1);
-		b1.executeForm(*r1);
-		b1.executeForm(*s1);
-		b1.signForm(*p1);
-		b1.executeForm(*p1);
 
 		std::cout << std::endl << "--- TESTES FORMULÁRIOS ---" << std::endl;
-		s2->execute(b2);
-		s1->beSigned(b2);
 		s2->beSigned(b2);
-		s2->beSigned(b2);
+		r2->beSigned(b2);
+		p2->beSigned(b2);
 		s2->execute(b2);
+		r2->execute(b2);
+		p2->execute(b2);
 
 		std::cout << "---" << std::endl;
 		delete	s1;
