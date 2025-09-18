@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 08:15:21 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/16 11:24:09 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:25:48 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,10 @@ void	Bureaucrat::signForm(AForm &f) {
 		if (f.getSigned())
 			std::cout << "Form " << f.getName() << " is allready signed!" << std::endl;
 		else {
-			f.beSigned(*this);
-			std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
+			if (f.beSigned(*this))
+				std::cout << this->getName() << " signed " << f.getName() << "." <<  std::endl;
+			else
+				std::cerr << this->getName() << " couldn't sign " << f.getName() << " because it is allready signed" << std::endl;
 		}
 	} catch (std::exception &e) {
 		std::cerr << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << "." << std::endl;

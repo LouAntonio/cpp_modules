@@ -61,18 +61,17 @@ int AForm::getGradeToExec(void) const {
 	return to_exec;
 }
 
-void AForm::beSigned(Bureaucrat &b) {
+int AForm::beSigned(Bureaucrat &b) {
 	if (b.getGrade() <= to_sign)
 	{
 		if (_signed)
-		{
-			std::cout << "Form " << this->getName() << " allready signed!" << std::endl;
-			return ;
-		}
+			return 0;
 		_signed = true;
+		return 1;
 	} else {
 		throw AForm::GradeTooLowException();
 	}
+	return 0;
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
