@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:54:53 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/02 11:38:18 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:17:49 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,17 @@ int Form::getGradeToExec(void) const {
 	return grade_to_exec;
 }
 
-void Form::beSigned(Bureaucrat &b) {
+int Form::beSigned(Bureaucrat &b) {
 	if (b.getGrade() <= grade_to_sign)
 	{
 		if (_signed)
-		{
-			std::cout << "Form allready signed!" << std::endl;
-			return ;
-		}
+			return 0;
 		_signed = true;
+		return 1;
 	} else {
 		throw Form::GradeTooLowException();
 	}
+	return 0;
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
