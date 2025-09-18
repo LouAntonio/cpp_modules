@@ -6,14 +6,15 @@
 #    By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/01 09:09:42 by lantonio          #+#    #+#              #
-#    Updated: 2025/09/17 13:54:49 by lantonio         ###   ########.fr        #
+#    Updated: 2025/09/18 09:08:35 by lantonio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= form28
+NAME		= intern
 
 SRCS	=	./src/main.cpp \
 			./src/AForm.cpp \
+			./src/Intern.cpp \
 			./src/Bureaucrat.cpp \
 			./src/RobotomyRequestForm.cpp \
 			./src/ShrubberyCreationForm.cpp \
