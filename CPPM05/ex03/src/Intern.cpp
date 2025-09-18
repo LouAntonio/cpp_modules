@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 13:56:07 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/18 09:18:26 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/18 09:39:42 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,29 @@ AForm	*makePresidential(std::string target) {
 	return new PresidentialPardonForm(target);
 }
 
+std::string lowercase(std::string toLower) {
+	for (std::string::size_type i = 0; i < toLower.size(); ++i) {
+		toLower[i] = static_cast<char>(std::tolower(static_cast<unsigned char>(toLower[i])));
+	}
+	return toLower;
+}
+
 AForm *Intern::makeForm(std::string name, std::string target) {	
-	std::string forms[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	std::string forms[3] = {"Shrubbery request", "robOTomy request", "Presidential request"};
 	AForm* (*functions[3])(std::string) = {makeShrubbery, makeRobotomy, makePresidential};
 
 	for (int i = 0; i < 3; i++) {
-		if (name == forms[i])
+		if (lowercase(name) == lowercase(forms[i]))
 		{
 			std::cout << "Intern creates " << name << std::endl;
 			return functions[i](target);
 		}
 	}
-	std::cout << "404\nForm " << name << " not founded!" << std::endl;
+	std::cout << "404 | Form " << name << " not founded!\n---" << std::endl;
+	throw Intern::FormNonExistent();
 	return NULL;
+}
+
+const char* Intern::FormNonExistent::what() const throw() {
+	return "Form not existent!";
 }
