@@ -6,7 +6,7 @@
 /*   By: lantonio <lantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:06:59 by lantonio          #+#    #+#             */
-/*   Updated: 2025/09/18 09:40:45 by lantonio         ###   ########.fr       */
+/*   Updated: 2025/09/18 09:44:45 by lantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int main(void)
 		Bureaucrat	*b = new Bureaucrat("lantonio", 2);
 		std::cout << "---" << std::endl;
 
-		std::cout << std::endl << "--- TESTES BUROCRATA ---" << std::endl;
+		std::cout << std::endl << "--- TESTE ESTAGIÁRIO ---" << std::endl;
 		test = lantonio.makeForm("robotomy request", "ladrao");
 
-		std::cout << std::endl << "--- TESTES FORMULÁRIOS ---" << std::endl;
+		std::cout << std::endl << "--- TESTES FORMULÁRIO ---" << std::endl;
 		test->beSigned(*b);
 		test->execute(*b);
 		std::cout << "---" << std::endl;
