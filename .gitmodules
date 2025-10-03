@@ -1,3 +1,18 @@
 [submodule "CPPM00"]
 	path = CPPM00
 	url = git@github.com:LouAntonio/CPPM00.git
+[submodule "CPPM01"]
+	path = CPPM01
+	url = git@github.com:LouAntonio/CPPM01.git
+[submodule "CPPM02"]
+	path = CPPM02
+	url = git@github.com:LouAntonio/CPPM02.git
+[submodule "CPPM03"]
+	path = CPPM03
+	url = git@github.com:LouAntonio/CPPM03.git
+[submodule "CPPM04"]
+	path = CPPM04
+	url = git@github.com:LouAntonio/CPPM04.git
+[submodule "CPPM05"]
+	path = CPPM05
+	url = git@github.com:LouAntonio/CPPM05.git
